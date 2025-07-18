@@ -1509,14 +1509,7 @@ Data::SavedSublist *PeerData::monoforumSublistFor(
 }
 
 bool PeerData::allowsForwarding() const {
-	if (isUser()) {
-		return true;
-	} else if (const auto channel = asChannel()) {
-		return channel->allowsForwarding();
-	} else if (const auto chat = asChat()) {
-		return chat->allowsForwarding();
-	}
-	return false;
+	return true;
 }
 
 Data::RestrictionCheckResult PeerData::amRestricted(
